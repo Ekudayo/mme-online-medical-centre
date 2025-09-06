@@ -1,7 +1,7 @@
 import styles from "../doctor/doctor.module.css";
 import { doctors } from "../../utils/data";
 console.log(doctors);
-import ViewProfile from "../event/viewProfile";
+import ViewProfile from "../event/ViewProfile.jsx";
 
 const Doctor = () => {
   return (
