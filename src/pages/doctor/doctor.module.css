@@ -1,0 +1,49 @@
+.doctorsContainer{
+  background-color: rgb(115, 122, 50);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 4rem;
+}
+.doctorsContainer h1{
+font-size: 3rem;
+}
+.doctorsContainer form input{
+font-size: 1.5rem;
+width: 80%;
+}
+
+.search{
+  display: flex;
+  flex-direction: row;
+justify-content: space-around;
+}
+.lists{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+margin-top: 1rem;
+gap: 2rem;
+
+}
+.list{
+/* background-color: aquamarine; */
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 0.3rem;
+}
+.img{
+  width: 300px;
+}
+
+@media (max-width=326px) {
+  .lists{
+flex-direction: column;
+
+}
+}

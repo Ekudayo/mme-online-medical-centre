@@ -1,0 +1,279 @@
+/* customerSaying.module.css
+
+.customerSayingSection {
+  padding: 40px 0;
+  background-color: #1a1212;
+  text-align: center;
+
+ 
+}
+
+.customerSayingTitle {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.horizontalLine {
+  width: 80px;
+  border: 1px solid #007bff;
+  margin: 0 auto 30px auto;
+}
+
+.carouselContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 50px;
+  position: relative;
+}
+
+.customerSlide {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.customerItem {
+  background-color: #cc6b6b;
+  border: 1px solid #dd1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customerInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.customerImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 2px solid #007bff;
+}
+
+.customerName {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #555;
+}
+
+.customerDescription {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #712323;
+  text-align: center;
+} */
+
+/* --- React Slick Overrides & Custom Arrow Styles --- */
+
+/* Style for your custom arrows */
+/* .customPrevArrow, .customNextArrow {
+  font-size: 2.5em;
+  color: #000000;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  transition: color 0.3s ease;
+} */
+
+/* .customPrevArrow {
+  left: -50px;
+}
+
+.customNextArrow {
+  right: -50px;
+
+}
+
+.customPrevArrow:hover, .customNextArrow:hover {
+  color: #0056b3;
+} */
+
+
+/* Slick Dots Styling (these are global classes from slick-carousel, so they don't use the module `styles` object) */
+/* .slick-dots {
+  bottom: -30px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #441d1d;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #007bff;
+} */
+ /* General section and title styles - keep as they are */
+.customerSayingSection {
+  padding: 40px 0;
+  background-color: #3b763d;
+  text-align: center;
+}
+
+.customerSayingTitle {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.horizontalLine {
+  width: 80px;
+  border: 1px solid #007bff;
+  margin: 0 auto 30px auto;
+}
+
+.carouselContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 50px; /* Space for arrows */
+  position: relative; /* Crucial for absolute arrow positioning */
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Styles for the individual slide content within the slider */
+.customerSlide {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.customerItem {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  min-height: 250px; /* Consistent height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customerInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.customerImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 2px solid #007bff;
+}
+
+.customerName {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #555;
+}
+
+.customerDescription {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #777;
+  text-align: center;
+}
+
+
+/* --- REACT SLICK ARROW STYLING --- */
+/* These styles directly target the elements slick-carousel creates,
+   and make sure your custom arrow components within them are visible. */
+
+/* Base styles for all slick arrows containers */
+/* These classes are applied by slick-carousel, so they are not module-scoped */
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    display: block; /* Ensure it's not hidden by default */
+    width: 40px;  /* Define a fixed width/height for the arrow container */
+    height: 40px;
+    background: none; /* Clear any default background */
+    border: none;     /* Clear any default border */
+    padding: 0;       /* Clear any default padding */
+    line-height: 0;   /* Prevent extra space if text is inside */
+
+    /* Hide the default pseudo-element content that slick-theme.css might put */
+    /* If you're using custom arrow components, these pseudo-elements are usually not needed */
+    /* and can cause issues if they render over your custom content. */
+    &::before {
+        display: none !important; /* Hide default content */
+    }
+}
+
+/* Specific positioning for previous arrow */
+.slick-prev {
+  left: 0px; /* Position it at the edge of the .carouselContainer's padding */
+}
+
+/* Specific positioning for next arrow */
+.slick-next {
+  right: 0px; /* Position it at the edge of the .carouselContainer's padding */
+}
+
+/* Styles for your custom arrow components (PrevArrow, NextArrow) */
+/* These are module-scoped classes */
+.customPrevArrow, .customNextArrow {
+  /* Ensure the content itself is visible and styled */
+  font-size: 3em; /* Make the arrow character large */
+  font-weight: bold; /* Make the arrow character bold */
+  color: #333; /* Dark color for good contrast against light background */
+
+  /* Make it fill its parent .slick-arrow container */
+  width: 100%;
+  height: 100%;
+  display: flex; /* Use flexbox to center the content (arrow char) */
+  align-items: center;
+  justify-content: center;
+
+  /* Optional: Add a subtle background/shape to the arrow "button" */
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  /* border-radius: 50%; */
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+
+  transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+.customPrevArrow:hover, .customNextArrow:hover {
+  color: #000; /* Darker on hover */
+  /* background-color: rgba(255, 255, 255, 0.9); */ /* Brighter background on hover */
+}
+
+
+/* Slick Dots Styling (these are global classes from slick-carousel) */
+.slick-dots {
+  bottom: -30px; /* Position dots below the slider */
+}
+
+.slick-dots li button:before {
+  font-size: 12px; /* Size of the dots */
+  color: #bbb; /* Color of inactive dots */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #007bff; /* Color of active dot */
+}
