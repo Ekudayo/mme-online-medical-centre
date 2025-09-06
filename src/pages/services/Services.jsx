@@ -1,4 +1,4 @@
-import styles from "../Services/services.module.css";
+import styles from "../services/services.module.css";
 import { servicesData } from "../../utils/data";
 console.log("servicesData:", servicesData);
 import LearnMore from "../event/LearnMore";
