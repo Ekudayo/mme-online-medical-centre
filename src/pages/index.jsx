@@ -12,4 +12,6 @@ import Leading from "./leading/Leading.jsx"
 import Dowloads from "./dowloads/Dowloads.jsx"
 import CustomerSaying from "./customersSaying/CustomerSaying.jsx"
 import Article from "./article/Article.jsx"
-export {About,Apps,Auth,Contact,Dashboard,Doctor,Home,Product,Services,Testimonial,Leading,Dowloads,CustomerSaying,Article}
+import Welcome from "./welcomeCenter/Welcome.jsx"
+import Register from "./register/Register.jsx"
+export {About,Apps,Auth,Contact,Dashboard,Doctor,Home,Product,Services,Testimonial,Leading,Dowloads,CustomerSaying,Article,Welcome,Register}

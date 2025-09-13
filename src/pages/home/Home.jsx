@@ -1,6 +1,6 @@
 import styles from "../home/home.module.css"
 import Consult  from "../event/Consult";
-import doctor from "../../assets/doctor.jpg";
+import doctor from "../../assets/doctor.png";
 import Services from "../services/Services";
 import Leading from "../leading/Leading";
 import Dowloads from "../dowloads/Dowloads";

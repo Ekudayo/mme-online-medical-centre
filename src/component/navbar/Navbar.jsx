@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { VscChromeClose } from "react-icons/vsc";
 import logo from "../../assets/logo.png";
 
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const toggleBar = () => {

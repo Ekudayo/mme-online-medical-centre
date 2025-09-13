@@ -24,11 +24,11 @@ export const navbarData = [
     path: "/about",
     navItem: "About Us",
   },
-  // {
-  //   id: 6,
-  //   path: "/services",
-  //   navItem: "our Services",
-  // },
+  {
+    id: 6,
+    path: "/welcome",
+    navItem: "Welcome Center",
+  },
 ];
 import searchDoctorPicture from "../assets/searchDoctorPicture.jpg";
 import pharmacyIcon from "../assets/pharmacyIcon.jpg";
@@ -140,14 +140,23 @@ export const articlesData = [
       "Eating a balanced diet is crucial for overall health. Discover tips for healthy eating habits.",
     image: article3,
   },
-  // {
-  //   id: 4,
-  //   title: "The Importance of Vaccinations",
-  //   description:
-  //     "Vaccinations play a crucial role in preventing infectious diseases. Learn about their benefits.",
-  //   image: article4,
-  // },
 ];
+
+export const registerData = [
+  {
+    id: 1,
+    title: "Register",
+    description: "Create an account to access all features.",
+  },
+];
+// {
+//   id: 4,
+//   title: "The Importance of Vaccinations",
+//   description:
+//     "Vaccinations play a crucial role in preventing infectious diseases. Learn about their benefits.",
+//   image: article4,
+// },
+
 import doctorOne from "../assets/doctorOne.jpg";
 import doctorTwo from "../assets/doctorTwo.jpg";
 import doctorThree from "../assets/doctorThree.jpg";

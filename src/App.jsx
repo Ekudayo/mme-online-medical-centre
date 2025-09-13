@@ -17,6 +17,8 @@ import {
   Product,
   Services,
   Testimonial,
+  Welcome,
+  Register
 } from "./pages/index";
 
 function App() {
@@ -35,6 +37,7 @@ function App() {
           <Route path="/apps" element={<Apps />} />
           <Route path="/product" element={<Product />} />
           <Route path="/doctor" element={<Doctor />} />
+          <Route path="/welcome/*" element={<Welcome />} />
           {/* <Route element={<Layout />} /> */}
           {/* <Route path="/services" element={<Services />} /> */}
         </Routes>
