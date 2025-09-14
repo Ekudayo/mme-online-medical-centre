@@ -16,6 +16,10 @@
   width: 60px;
   height: 60px;
 }
+.activeNavItem{
+    color: #3b763d;
+  border-bottom: 2px solid #3b763d;
+}
 .navLists {
   display: flex;
   gap: 20px;

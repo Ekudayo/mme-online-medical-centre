@@ -4,10 +4,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  // const [formData, setFormData] = useState({ email: "", password: "" });
+  // loading state start
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
+  // loading state end
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -17,16 +25,17 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // set loading to true start
+      setLoading(true); // Step 2: Start loading
+      setError(null);
+    // set loading to true end
 
     try {
-      const res = await fetch(
-        "https://localhost:5000/api/v1/auth/login",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      const res = await fetch("http://localhost:5000/api/v1/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
       console.log("RES", res);
       const data = await res.json();
       console.log("DATA LOGIN VALUES", data);
@@ -42,6 +51,11 @@ const Login = () => {
       console.error(error);
       toast.error("Something went wrong");
     }
+    // set loading to false start
+     finally {
+      setLoading(false); // Step 2: Stop loading
+    }
+    // set loading to false end
   };
 
   return (
