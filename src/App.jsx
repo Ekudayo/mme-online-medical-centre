@@ -9,16 +9,18 @@ import Layout from "./layout/Layout";
 import {
   About,
   Apps,
-  Auth,
+ 
   Contact,
-  Dashboard,
+
   Doctor,
   Home,
   Product,
   Services,
   Testimonial,
-  Welcome,
-  Register
+  // Welcome,
+ Login,
+  RegisterPage,
+  Dashboard
 } from "./pages/index";
 
 function App() {
@@ -37,9 +39,12 @@ function App() {
           <Route path="/apps" element={<Apps />} />
           <Route path="/product" element={<Product />} />
           <Route path="/doctor" element={<Doctor />} />
-          <Route path="/welcome/*" element={<Welcome />} />
+          {/* <Route path="/welcome/*" element={<Welcome />} /> */}
           {/* <Route element={<Layout />} /> */}
           {/* <Route path="/services" element={<Services />} /> */}
+          <Route path="/auth/login" element={<Login />} />
+          <Route path="/auth/registerPage" element={<RegisterPage />} />
+          <Route path="/auth/dashboard" element={<Dashboard />} />
         </Routes>
         {/* services */}
         {/* <Routes></Routes> */}

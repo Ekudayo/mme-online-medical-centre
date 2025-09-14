@@ -26,9 +26,20 @@ export const navbarData = [
   },
   {
     id: 6,
-    path: "/welcome",
-    navItem: "Welcome Center",
+    path: "/auth/login",
+    navItem: "Login",
   },
+  {
+    id: 7,
+    path: "/auth/registerPage",
+    navItem: "Register",
+  },
+  {
+    id: 8,
+    path: "/auth/dashboard",
+    navItem: "Dashboard",
+  },
+
 ];
 import searchDoctorPicture from "../assets/searchDoctorPicture.jpg";
 import pharmacyIcon from "../assets/pharmacyIcon.jpg";
