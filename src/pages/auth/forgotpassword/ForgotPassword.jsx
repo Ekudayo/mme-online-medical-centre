@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import styles from "./forgotpassword.module.css";
+import styles from "../forgotpassword/forgotPassword.module.css";
 
 const ForgotPassword = () => {
   const [formData, setFormData] = useState({ email: "" });
