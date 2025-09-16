@@ -16,7 +16,7 @@ import Login from "./auth/login/Login.jsx";
 import Settings from "./auth/dashboard/setting/Setting.jsx";
 import Users from "./auth/dashboard/user/User.jsx";
 import Dashboard from "./auth/dashboard/Dashboard.jsx";
-import ForgotPassword from "./auth/forgotPassword/ForgotPassword.jsx";
+import ForgotPassword from  "./auth/forgotPassword/ForgotPassword.jsx";
 import VerifyToken from "./auth/verifyToken/VerifyToken.jsx";
 export {
   About,
