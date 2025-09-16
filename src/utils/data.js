@@ -35,11 +35,11 @@ export const navbarData = [
     navItem: "Login",
   },
 
-  {
-    id: 8,
-    path: "/auth/dashboard",
-    navItem: "Dashboard",
-  },
+  // {
+  //   id: 8,
+  //   path: "/auth/dashboard",
+  //   navItem: "Dashboard",
+  // },
 ];
 import searchDoctorPicture from "../assets/searchDoctorPicture.jpg";
 import pharmacyIcon from "../assets/pharmacyIcon.jpg";

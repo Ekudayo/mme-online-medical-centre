@@ -1,21 +1,14 @@
-import styles from "../login/login.module.css";
+import styles from "../verifyToken/verifyToken.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const Login = () => {
-  // const [formData, setFormData] = useState({ email: "", password: "" });
-  // loading state start
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-  });
+
+const VerifyToken = () => {
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  // loading state end
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -25,10 +18,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // set loading to true start
-      setLoading(true); // Step 2: Start loading
-      setError(null);
-    // set loading to true end
 
     try {
       const res = await fetch("http://localhost:5000/api/v1/auth/login", {
@@ -51,17 +40,15 @@ const Login = () => {
       console.error(error);
       toast.error("Something went wrong");
     }
-    // set loading to false start
-     finally {
-      setLoading(false); // Step 2: Stop loading
-    }
-    // set loading to false end
   };
 
   return (
     <div className="container">
-      <h1>Login</h1>
+      <Link to="/" className={styles.homeLink}>
+        Home
+      </Link>
       <form onSubmit={handleSubmit}>
+        <h1>Login</h1>
         <div>
           <input
             name="email"
@@ -85,12 +72,20 @@ const Login = () => {
 
         <button type="submit">Submit</button>
 
-        <div>
-          <Link to="/auth/forgot-password">Forgot password?</Link>
+        <div className={styles.authLinkContainer}>
+          <p>
+            Don't have an account?{" "}
+            <Link className={styles.authLink} to="/auth/register">
+              Register
+            </Link>
+          </p>
+          <Link className={styles.authLink} to="/auth/forgot-password">
+            Forgot password?
+          </Link>
         </div>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default VerifyToken;

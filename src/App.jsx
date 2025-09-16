@@ -1,55 +1,60 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 // import Layout from "./layout/Layout";
-import Navbar from "./component/navbar/Navbar";
-
-import Footer from "./component/footer/Footer";
-import Layout from "./layout/Layout";
-
 import {
   About,
   Apps,
- 
   Contact,
-
   Doctor,
   Home,
   Product,
-  Services,
   Testimonial,
-  // Welcome,
- Login,
   RegisterPage,
-  Dashboard
+  Dashboard,
+  Login,
+  ForgotPassword,
+  // VerifyToken,
 } from "./pages/index";
+import Layout from "./layout/Layout.jsx";
+import AuthLayout from "./authLayout/AuthLayout.jsx";
+
+
+
 
 function App() {
   return (
     <>
       <Router>
-        {<Navbar />}
         <Routes>
-          {/* <Route element={<Layout />} /> */}
-          <Route path="/" element={<Home />} />
-          <Route path="/doctor" element={<Doctor />} />
+          {/* Route with navbar and footer */}
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/doctor" element={<Doctor />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/testimonial" element={<Testimonial />} />
+            <Route path="/apps" element={<Apps />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/doctor" element={<Doctor />} />
+            <Route path="/auth/login" element={<Login />} />
+            <Route path="/auth/registerPage" element={<RegisterPage />} />
+          </Route>
+          {/* Route with navbar and footer */}
 
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/testimonial" element={<Testimonial />} />
-          <Route path="/apps" element={<Apps />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/doctor" element={<Doctor />} />
-          {/* <Route path="/welcome/*" element={<Welcome />} /> */}
-          {/* <Route element={<Layout />} /> */}
-          {/* <Route path="/services" element={<Services />} /> */}
-          <Route path="/auth/login" element={<Login />} />
-          <Route path="/auth/registerPage" element={<RegisterPage />} />
-          <Route path="/auth/dashboard" element={<Dashboard />} />
+          {/* Route without navbar and footer */}
+          <Route element={<AuthLayout />}>
+            <Route path="/auth/login" element={<Login />} />
+            <Route path="/auth/register" element={<RegisterPage />} />
+            <Route path="/auth/forgot-password" element={<ForgotPassword />} />
+          </Route>
+          {/* Route without navbar and footer */}
+
+          {/* dashboard start */}
+          <Route element={<AuthLayout />}>
+            <Route path="/auth/dashboard" element={<Dashboard />} />
+          </Route>
+          {/* dashboard start */}
         </Routes>
-        {/* services */}
-        {/* <Routes></Routes> */}
-        {/* services */}
-        {<Footer />}
       </Router>
     </>
   );
