@@ -1,7 +1,7 @@
-import styles from "../forgotPassword/forgotPassword.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import styles from "./forgotpassword.module.css";
 
 const ForgotPassword = () => {
   const [formData, setFormData] = useState({ email: "" });
@@ -19,7 +19,7 @@ const ForgotPassword = () => {
 
     try {
       const res = await fetch(
-        "http://localhost:5000/api/v1/auth/forgot-password",
+        "http://localhost:2025/api/v1/auth/forgot-password",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -33,7 +33,7 @@ const ForgotPassword = () => {
       if (res.status === 200) {
         toast.success(data.message || "Password reset email sent!");
         // Redirect to login page
-        navigate("/auth/verify-token");
+        navigate("/auth/verify-otp");
       } else {
         toast.error(data.error || "Unable to send reset email");
       }
