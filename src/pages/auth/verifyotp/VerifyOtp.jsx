@@ -1,4 +1,4 @@
-import styles from "../verifyotp/verifyotp.module.css";
+import styles from "../verifyotp/VerifyOtp.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
