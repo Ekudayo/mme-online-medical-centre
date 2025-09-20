@@ -17,7 +17,7 @@ import Settings from "./auth/dashboard/setting/Setting.jsx";
 import Users from "./auth/dashboard/user/User.jsx";
 import Dashboard from "./auth/dashboard/Dashboard.jsx";
 import ForgotPassword from "./auth/forgotPasssword/ForgotPassword.jsx";
-import VerifyToken from  "./auth/verifyToken/VerifyToken.jsx";
+import VerifyOtp from "./auth/verifyotp/VerifyOtp.jsx"
 export {
   About,
   Apps,
@@ -38,5 +38,5 @@ export {
   Users,
   Dashboard,
   ForgotPassword,
-  VerifyToken,
+  VerifyOtp
 };

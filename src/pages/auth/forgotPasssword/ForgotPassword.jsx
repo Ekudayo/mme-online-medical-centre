@@ -16,10 +16,9 @@ const ForgotPassword = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const res = await fetch(
-        "http://localhost:2025/api/v1/auth/forgot-password",
+        "http://localhost:5000/api/v1/auth/forgot-password",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -73,7 +72,7 @@ const ForgotPassword = () => {
           </p>
           <Link className={styles.authLink} to="/auth/forgot-password">
             Forgot password?
-          </Link>
+          </Link> 
         </div>
       </form>
     </div>

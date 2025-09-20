@@ -1,52 +1,84 @@
-import styles from "../verifyToken/verifyToken.module.css";
+import styles from "../verifyotp/verifyotp.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+// 
 
+// const VerifyOtp = () => {
+//   const [formData, setFormData] = useState({ email: "", password: "" });
+//   const [message, setMessage] = useState("");
+//   const navigate = useNavigate()
 
-const VerifyToken = () => {
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//   };
+//   try {
+//     const res = await fetch("http://localhost:5000/api/v1/auth/login", {
+//       method: "POST",
+//       headers: { "content-type": "application/json" },
+//       body: JSON.stringify(formData)
+//   });
+//   console.log("Res", res);
+//   const data = await res.json();
+//   console.log("DATA LOGIN VALUES",data);
+//   if(res.status===200){toast.success(data.message || "Login Successful");
+//  // redirect to dashboard
+//   navigate("/auth/dashboard");
+//   } else {
+//     toast.error(data.error || "Login Failed");
+//   }
+//   }
+//   catch (error){
+// console.error(error)
+// toast.error("Something went wrong in login");
+//   }
+// }
+//   return <div>VerifyOtp</div>;
+// };
+// export default VerifyOtp;
+
+const VerifyOtp = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const res = await fetch("http://localhost:5000/api/v1/auth/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "content-type": "application/json" },
         body: JSON.stringify(formData),
       });
-      console.log("RES", res);
+      console.log("Res", res);
       const data = await res.json();
       console.log("DATA LOGIN VALUES", data);
 
       if (res.status === 200) {
-        toast.success(data.message || "Login successful!");
-        // Redirect to dashboard page
+        toast.success(data.message || "Login Successful");
+        // redirect to dashboard
         navigate("/auth/dashboard");
       } else {
-        toast.error(data.error || "Login failed");
+        toast.error(data.error || "Login Failed");
       }
     } catch (error) {
       console.error(error);
-      toast.error("Something went wrong");
+      toast.error("Something went wrong in login");
     }
   };
 
   return (
-    <div className="container">
-      <Link to="/" className={styles.homeLink}>
-        Home
-      </Link>
+    <div className={styles.container}>
+      <Link to={"/"}>Home</Link>
+
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         <div>
@@ -88,4 +120,4 @@ const VerifyToken = () => {
   );
 };
 
-export default VerifyToken;
+export default VerifyOtp;
