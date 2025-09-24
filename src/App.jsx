@@ -36,8 +36,8 @@ function App() {
             <Route path="/apps" element={<Apps />} />
             <Route path="/product" element={<Product />} />
             <Route path="/doctor" element={<Doctor />} />
-            <Route path="/auth/login" element={<Login />} />
-            <Route path="/auth/registerPage" element={<RegisterPage />} />
+            {/* <Route path="/auth/login" element={<Login />} /> */}
+            {/* <Route path="/auth/registerPage" element={<RegisterPage />} /> */}
           </Route>
           {/* Route with navbar and footer */}
 
@@ -46,6 +46,8 @@ function App() {
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/register" element={<RegisterPage />} />
             <Route path="/auth/forgot-password" element={<ForgotPassword />} />
+            <Route path="/auth/registerPage" element={<RegisterPage />} />
+            <Route path="/auth/login" element={<Login />} />
           </Route>
           {/* Route without navbar and footer */}
 

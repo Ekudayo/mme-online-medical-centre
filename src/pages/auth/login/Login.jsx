@@ -59,36 +59,41 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            name="email"
-            type="email"
-            placeholder="Enter email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <input
-            name="password"
-            type="password"
-            placeholder="Enter password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
+    <div>
+       <Link to="/" className={styles.homeLink}>
+                Home
+              </Link>
+      <div className="container">
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <input
+              name="email"
+              type="email"
+              placeholder="Enter email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <input
+              name="password"
+              type="password"
+              placeholder="Enter password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <button type="submit">Submit</button>
+          <button type="submit">Submit</button>
 
-        <div>
-          <Link to="/auth/forgot-password">Forgot password?</Link>
-        </div>
-      </form>
+          <div>
+            <Link to="/auth/forgot-password">Forgot password?</Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

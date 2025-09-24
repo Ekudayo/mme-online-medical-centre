@@ -3,7 +3,7 @@ import styles from "../registerpage/registerPage.module.css";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-
+import BackgroundImg from "../../../assets/background-img.jpg";
 // import "./register.module.css";
 
 const RegisterPage = () => {
@@ -58,71 +58,87 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="container">
-      <Link to="/" className={styles.homeLink}>
-        Home
-      </Link>
-      <form onSubmit={handleSumbit}>
-        <h1>Register</h1>
-        <div>
-          <input
-            name="firstname"
-            type="text"
-            placeholder="enter firstname"
-            id="firstname"
-            value={formData.firstname}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="lastname"
-            type="text"
-            placeholder="enter lastname"
-            id="lastname"
-            value={formData.lastname}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="email"
-            type="email"
-            placeholder="enter email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="password"
-            type="password"
-            placeholder="enter password"
-            id="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </div>
+    <div className={styles.authContainer}>
+      <div>
+        {" "}
+        <Link to="/" className={styles.homeLink}>
+          Home
+        </Link>
+      </div>
 
-        <div>
-          <input
-            name="address"
-            type="text"
-            placeholder="enter address"
-            id="address"
-            value={formData.address}
-            onChange={handleChange}
-          />
+      <div className={styles.authBox}>
+        <div className={styles.authFormContainer}>
+          <form className={styles.authForm} onSubmit={handleSumbit}>
+            <h1>Register</h1>
+            <div className={styles.inputBoxContainer}>
+              <input
+                className={styles.inputBox}
+                name="firstname"
+                type="text"
+                placeholder="enter firstname"
+                id="firstname"
+                value={formData.firstname}
+                onChange={handleChange}
+              />
+            </div>
+            <div className={styles.inputBoxContainer}>
+              <input
+                className={styles.inputBox}
+                name="lastname"
+                type="text"
+                placeholder="enter lastname"
+                id="lastname"
+                value={formData.lastname}
+                onChange={handleChange}
+              />
+            </div>
+            <div className={styles.inputBoxContainer}>
+              <input
+                className={styles.inputBox}
+                name="email"
+                type="email"
+                placeholder="enter email"
+                id="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div className={styles.inputBoxContainer}>
+              <input
+                className={styles.inputBox}
+                name="password"
+                type="password"
+                placeholder="enter password"
+                id="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className={styles.inputBoxContainer}>
+              <input
+                className={styles.inputBox}
+                name="address"
+                type="text"
+                placeholder="enter address"
+                id="address"
+                value={formData.address}
+                onChange={handleChange}
+              />
+            </div>
+            <div className={styles.authLinkContainer}>
+              <p>Already have an account? </p>
+              <Link className={styles.authLink} to="/auth/login">
+                Login
+              </Link>
+            </div>
+            <button className={styles.submitButton} type="submit">
+              Submit
+            </button>
+          </form>
         </div>
-        <div className={styles.authLinkContainer}>
-          <p>Already have an account? </p>
-          <Link className={styles.authLink} to="/auth/login">
-            Login
-          </Link>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      </div>
+      <img className={styles.backgroundImg} src={BackgroundImg} alt="background-img" />
     </div>
   );
 };
